@@ -1,0 +1,17 @@
+syntax = "proto3";
+package QuyYeuCode.defiloan.defiloan;
+
+import "gogoproto/gogo.proto";
+import "defiloan/params.proto";
+import "defiloan/defi_loan.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/QuyYeuCode/Defi-Loan/x/defiloan/types";
+
+// GenesisState defines the defiloan module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  repeated DefiLoan defiLoanList = 2 [(gogoproto.nullable) = false];
+  uint64 defiLoanCount = 3;
+  // this line is used by starport scaffolding # genesis/proto/state
+}

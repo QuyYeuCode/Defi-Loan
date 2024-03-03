@@ -1,0 +1,61 @@
+syntax = "proto3";
+package QuyYeuCode.defiloan.defiloan;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/QuyYeuCode/Defi-Loan/x/defiloan/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc RequestDefiLoan(MsgRequestDefiLoan) returns (MsgRequestDefiLoanResponse);
+  rpc ApproveDefiLoan(MsgApproveDefiLoan) returns (MsgApproveDefiLoanResponse);
+  rpc RepayDefiLoan(MsgRepayDefiLoan) returns (MsgRepayDefiLoanResponse);
+  rpc LiquidateDefiLoan(MsgLiquidateDefiLoan) returns (MsgLiquidateDefiLoanResponse);
+  rpc CancelDefiLoan(MsgCancelDefiLoan) returns (MsgCancelDefiLoanResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgRequestDefiLoan {
+  string creator = 1;
+  string amount = 2;
+  string fee = 3;
+  string collateral = 4;
+  string deadline = 5;
+}
+
+message MsgRequestDefiLoanResponse {
+}
+
+message MsgApproveDefiLoan {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgApproveDefiLoanResponse {
+}
+
+message MsgRepayDefiLoan {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgRepayDefiLoanResponse {
+}
+
+message MsgLiquidateDefiLoan {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgLiquidateDefiLoanResponse {
+}
+
+message MsgCancelDefiLoan {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgCancelDefiLoanResponse {
+}
+
+// this line is used by starport scaffolding # proto/tx/message
